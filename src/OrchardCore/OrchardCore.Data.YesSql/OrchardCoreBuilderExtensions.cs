@@ -7,6 +7,7 @@ using Microsoft.Extensions.Options;
 using OrchardCore.Data;
 using OrchardCore.Data.Documents;
 using OrchardCore.Data.Migration;
+using OrchardCore.Data.YesSql.Internal;
 using OrchardCore.Environment.Shell;
 using OrchardCore.Environment.Shell.Models;
 using OrchardCore.Environment.Shell.Scope;
@@ -58,7 +59,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
                     IConfiguration storeConfiguration = new YesSql.Configuration
                     {
-                        ContentSerializer = new PoolingJsonContentSerializer(sp.GetService<ArrayPool<char>>()),
+                        ContentSerializer = new PoolingJsonContentSerializer(sp.GetRequiredService<ArrayPool<char>>()),
                     };
 
                     switch (shellSettings["DatabaseProvider"])

@@ -10,7 +10,7 @@
       Provides data access functionality using YesSql
     </Description>
     <PackageTags>$(PackageTags) OrchardCoreCMS Data</PackageTags>
-    <DefineConstants>$(DefineConstants);JSON_POOLING_INTERNAL</DefineConstants>
+    <DefineConstants>$(DefineConstants)</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,15 +26,6 @@
   <ItemGroup>
     <PackageReference Include="YesSql" />
     <PackageReference Include="ZString" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\OrchardCore.Infrastructure\Pooling\JsonArrayPool.cs">
-      <Link>JsonArrayPool.cs</Link>
-    </Compile>
-    <Compile Include="..\OrchardCore.Infrastructure\Pooling\PoolingJsonSerializer.cs">
-      <Link>PoolingJsonSerializer.cs</Link>
-    </Compile>
   </ItemGroup>
 
 </Project>
